@@ -8,6 +8,8 @@ PATH_LIB = ./libft/
 PATH_OBJ = ./objects/
 PATH_SRC = ./sources/
 
+fclean:
+	@make fclean -C $(PATH_LIB)
 
 git:
 	@git status
