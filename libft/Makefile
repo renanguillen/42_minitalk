@@ -1,6 +1,11 @@
 NAME = libft.a
 
-SRCS = ft_atoi.c\
+PATH_INC = ./includes/
+PATH_OBJ = ./objects/
+PATH_SRC = ./sources/
+
+SRCS = $(addprefix $(PATH_SRC),\
+	ft_atoi.c\
 	ft_bzero.c\
 	ft_calloc.c\
 	ft_get_next_line.c\
@@ -27,6 +32,14 @@ SRCS = ft_atoi.c\
 	ft_memmove.c\
 	ft_memset.c\
 	ft_pointerfree.c\
+	ft_printf_arg_c.c\
+	ft_printf_arg_p.c\
+	ft_printf_arg_sdi.c\
+	ft_printf_arg_ux.c\
+	ft_printf_countdigits.c\
+	ft_printf_validation.c\
+	ft_printf.c\
+	ft_putbase.c\
 	ft_putchar_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
@@ -47,24 +60,26 @@ SRCS = ft_atoi.c\
 	ft_strtrim.c\
 	ft_substr.c\
 	ft_tolower.c\
-	ft_toupper.c
-OBJS = $(SRCS:.c=.o)
+	ft_toupper.c)
 
-FLAGS = -Wall -Wextra -Werror
+OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJ)%.o, $(SRCS))
 
-all: $(NAME)
+CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME) clean
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	cc $(FLAGS) -c $< -o $@
+$(PATH_OBJ)%.o: $(PATH_SRC)%.c
+	@mkdir -p $(PATH_OBJ)
+	@cc $(CFLAGS) -I $(PATH_INC) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS) $(BOBJS)
+	@rm -rf $(PATH_OBJ)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm $(NAME)
 
 re: fclean all
 

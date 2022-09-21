@@ -1,12 +1,13 @@
 NAME = minitalk
 
-SV = server
 CL = client
+SV = server
 
+PATH_INC = ./includes/
 PATH_LIB = ./libft/
 PATH_OBJ = ./objects/
 PATH_SRC = ./sources/
-PATH_INC = ./includes/
+
 
 git:
 	@git status
