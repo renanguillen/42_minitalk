@@ -6,14 +6,15 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:32:26 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/22 19:56:00 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:02:36 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
-// # include <stdarg.h>
+# include <sys/types.h>
+# include <stdarg.h>
 # include <stdbool.h>
 # include <signal.h>
 # include "../libft/includes/libft.h"
