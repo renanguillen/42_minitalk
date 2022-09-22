@@ -6,14 +6,16 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:55 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/22 16:36:02 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/22 17:27:39 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minitalk.h"
 
+t_char global;
+
 int	main(void)
 {
-	int i = 1;
-	return (i);
+	ft_bzero(&global, 2);
+	return (0);
 }
