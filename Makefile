@@ -56,3 +56,5 @@ git:
 	@git add .
 	@git commit -m 'Automatic commit via Makefile'
 	@git push
+	@clear
+	@git status
