@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:55 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/26 22:09:15 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/26 22:29:01 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_char	g_char;
 
-void	char_display(int signal)
+static void	char_display(int signal)
 {
 	if (signal == SIGUSR1)
 		g_char.assembled += (0b00000001 << g_char.bits_shifted);
