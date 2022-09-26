@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:55 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/22 20:05:22 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/26 22:09:15 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	char_display(int signal)
 	if (g_char.bits_shifted == 7)
 	{
 		ft_putchar_fd(g_char.assembled, STDOUT_FILENO);
-		ft_bzero(&g_char, 2);
+		g_char.bits_shifted = 0;
+		g_char.assembled = '\0';
 		return ;
 	}
 	g_char.bits_shifted++;
@@ -29,7 +30,8 @@ void	char_display(int signal)
 
 int	main(void)
 {
-	ft_bzero(&g_char, 2);
+	g_char.bits_shifted = 0;
+	g_char.assembled = '\0';
 	ft_putnbr_fd(getpid(), STDOUT_FILENO);
 	ft_putchar_fd('\n', STDOUT_FILENO);
 	signal(SIGUSR1, char_display);
