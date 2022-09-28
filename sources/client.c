@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/26 22:06:26 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:36:04 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,3 @@ int	main(int argc, char **argv)
 		argv[2]++;
 	}
 }
-//comentario
