@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/29 22:47:26 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/29 23:10:37 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_send(int pid, char sent)
 		else
 			status = kill(pid, SIGUSR2);
 		if (status == -1)
-			ft_error("Kill error.");
+			ft_error("Send error.");
 		bits_shifted++;
 		usleep(500);
 	}
