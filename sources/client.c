@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/29 22:17:35 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/29 23:37:35 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@ static void	ft_error(char *message)
 {
 	ft_putendl_fd(message, STDERR_FILENO);
 	exit(EXIT_FAILURE);
+}
+
+static void	ft_receive(int signal)
+{
+	if (signal == SIGUSR2)
+	{
+		ft_putendl_fd("Received Signal", STDOUT_FILENO);
+		exit(0);
+	}
 }
 
 static void	ft_send(int pid, char sent)
@@ -51,5 +60,7 @@ int	main(int argc, char **argv)
 		ft_send(pid, *argv[2]);
 		argv[2]++;
 	}
+	signal(SIGUSR2, ft_receive);
+	ft_send(pid, 0);
 	return (0);
 }
