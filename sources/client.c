@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/29 23:10:37 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/29 22:17:35 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ static void	ft_send(int pid, char sent)
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
-	int		i;
 
-	i = 0;
 	if (argc != 3)
 		ft_error("Invalid Syntax.");
 	else if (ft_strlen(argv[1]) > 7)
