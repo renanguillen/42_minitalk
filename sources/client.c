@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:31:47 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/29 23:37:35 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/10/26 17:22:11 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,25 @@ static void	ft_send(int pid, char sent)
 	}
 }
 
+static int	ft_checkpid(char *str)
+{
+	if (ft_strlen(str) > 7)
+		return (1);
+	while (*str)
+	{
+		if (!ft_isdigit(*str++))
+			return (1);
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	pid_t	pid;
 
 	if (argc != 3)
 		ft_error("Invalid Syntax.");
-	else if (ft_strlen(argv[1]) > 7)
+	else if (ft_checkpid(argv[1]))
 		ft_error("Invalid PID.");
 	pid = ft_atoi(argv[1]);
 	while (*argv[2])
